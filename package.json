@@ -1,0 +1,56 @@
+{
+  "name": "sequelize-demo",
+  "version": "1.0.0",
+  "description": "A demo of sequelize",
+  "main": "server.ts",
+  "scripts": {
+    "start": "pm2 start ./dist/server.js --name api --no-daemon",
+    "lint": "eslint . --ext .ts",
+    "format": "yarn prettier --write .",
+    "develop": "nodemon",
+    "build": "npm install && npm run tsc",
+    "tsc": "tsc",
+    "test": "jest",
+    "launch-development": "ENV=development VERSION=$npm_package_version ts-node -r dotenv/config src/server.ts",
+    "update-models": "node ./sequelize_auto/update-models.js"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.3.0",
+    "csv-writer": "^1.6.0",
+    "dayjs": "^1.11.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.2.10",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "pm2": "^5.2.0",
+    "sequelize": "^6.21.3",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^18.6.5",
+    "@types/node-fetch": "^2.6.2",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.21.0",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "sequelize-auto": "^0.8.8",
+    "sequelize-cli": "^6.4.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}
